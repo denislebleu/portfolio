@@ -1,0 +1,158 @@
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    line-height: 1.6;
+    position: relative;
+}
+
+/* Image de fond */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('images/fond.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    animation: brightnessAnimation 12s ease-in-out infinite; /* Appliquer l'animation ici */
+}
+
+/* Animation de luminosité pour l'image de fond */
+@keyframes brightnessAnimation {
+    0%, 100% {
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.5); /* Tu peux ajuster cette valeur */
+    }
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Enlever tout fond ou transparence */
+header, section, footer {
+    position: relative;
+    z-index: 1;
+    background: none; /* Pas de fond */
+}
+
+/* Héro */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.main-title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* À propos de moi */
+#about {
+    padding: 60px 0;
+    text-align: center;
+    color: white;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.icon-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.icon-box i, .icon-box svg {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Mes Projets */
+#projects {
+    padding: 60px 0;
+    color: white;
+}
+
+.project-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: none;
+    border: none;
+    color: white;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer */
+footer {
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade-in animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
